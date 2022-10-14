@@ -41,6 +41,7 @@
           <div class="cardholder-name">
             <label for="name">cardholder name</label>
             <input
+              placeholder="e.g jane appleased"
               type="text"
               id="cardholder"
               v-model="state.cardholder_name"
@@ -50,6 +51,7 @@
           <div class="cardholder-number">
             <label for="number">card number</label>
             <input
+              placeholder="e.g 0000 0000 0000 0000"
               type="text"
               id="cardnumber"
               v-maska="'#### #### #### ####'"
@@ -63,18 +65,31 @@
           <div class="exp-date2">
             <div class="month">
               <label for="exp">exp. year</label>
-              <input type="text" class="mm" v-model="state.mm" maxlength="2" />
+              <input
+                type="text"
+                placeholder="e.g 00"
+                class="mm"
+                v-model="state.mm"
+                maxlength="2"
+              />
               <span class="error" v-if="v$.mm.$error">
                 {{ v$.mm.$errors[0].$message }}
               </span>
             </div>
             <div class="year">
               <label for="year">(mm/yy)</label>
-              <input type="text" class="yy" v-model="state.yy" maxlength="2" />
+              <input
+                type="text"
+                placeholder="e.g 00"
+                class="yy"
+                v-model="state.yy"
+                maxlength="2"
+              />
             </div>
             <div class="cvc">
               <label for="cvc">cvc</label>
               <input
+                placeholder="e.g 000"
                 type="text"
                 class="cvc"
                 v-model="state.cvc"
@@ -118,7 +133,7 @@ export default {
     });
 
     const popupTriggers = ref({
-      buttonTrigger: true,
+      buttonTrigger: false,
     });
 
     const rules = computed(() => {
