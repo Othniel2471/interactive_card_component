@@ -41,7 +41,7 @@
           <div class="cardholder-name">
             <label for="name">cardholder name</label>
             <input
-              placeholder="e.g jane appleased"
+              placeholder="e.g  jane appleased"
               type="text"
               id="cardholder"
               v-model="state.cardholder_name"
